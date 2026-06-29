@@ -142,11 +142,11 @@ The micro tasks queue is not empty. So the event loop first drains the micro tas
 
 identifying synchronous, Micro and macro tasks:
 
-Synchronous: Microtasks:
+Synchronous:        Microtasks:
 
-start Promise.resolve().then(() => console.log('Promise 2'));
+start               Promise.resolve().then(() => console.log('Promise 2'));
 
-end Promise.resolve().then(() => console.log('Promise 1'));
+end                 Promise.resolve().then(() => console.log('Promise 1'));
 
 Macro tasks:
 
