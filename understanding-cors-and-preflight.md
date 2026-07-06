@@ -40,8 +40,9 @@ A preflight can be triggered by a variety of reasons:
 | 4. JSON + credentials | YES | fail | `ACAO` - `wild card`vand `request's credentials`:`true` | origin:`*`, creds:`true`| change `ACAO` to specific origins |
 ---
 # Real-World CORS Problem – Learning from a Developer
-- ## Problem: Summary in 2–3 sentences.
-- ## Solution Taken: Steps the developer followed.
-- ## My Takeaway: What you understood and what you would do next time.
-
-# 
+- ## Problem: 
+    The developer was building a web app for a client using `content management system` as its backend. The tests ran locally showed no error and ran without error during the local testing phase even while connecting the back end and front end. But after deploying the web app it started to show errors as the origin * couldn't access the front end. This happened due to the CMS needing specific origin in the backend and not * as the production configuration expects it.
+- ## Solution Taken: 
+    The developer tried giving the origin specific front end URL as they saw the network CORS error message mentioning the origin *. As they ran again after using the specifc URL the code worked perfectly
+- ## My Takeaway: 
+    While using CMS as backend, using credentials or not, it's advised to always give the specific URL's list as CORS which would reduce the error that might pop-up related to CORS and browser specifically blocks all the `origin *` with `creds true`.
